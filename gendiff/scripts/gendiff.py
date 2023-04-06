@@ -5,12 +5,13 @@ parser = argparse.ArgumentParser(description='Compares two configuration files a
 parser.add_argument('first_file')
 parser.add_argument('second_file')
 
+parser.add_argument('-f', '--format', help='set format of output')
+
 args = parser.parse_args()
 
 print(args)
 
 def main():
-    
     return print('Временный текст!')
 
 if __name__ == '__main__':
