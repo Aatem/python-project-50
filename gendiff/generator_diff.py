@@ -1,11 +1,6 @@
 import json
 
 
-#file1 = json.load(open('/home/artem/files/file1.json'))
-#file2 = json.load(open('/home/artem/files/file2.json'))
-#print(file1)
-#print(file2)
-
 def generate_diff(file1, file2):
     file_1 = json.load(open(file1))
     file_2 = json.load(open(file2))
@@ -14,7 +9,6 @@ def generate_diff(file1, file2):
     e = {}
     r = {}
     t = {}
-    y = []
     u = []
     result = ''
     for key in file_1.keys() - file_2.keys():
@@ -40,11 +34,9 @@ def generate_diff(file1, file2):
     for key in a:
         for n in res.keys():
             if key == n:
-                o = key +': ' + str(res[n])
+                o = key + ': ' + str(res[n])
                 u.append(o)
     for key in u:
         result += str(key) + '\n'
     result = '{\n' + result + '}'
     return result
-
-#print(generate_diff('/home/artem/files/file1.json', '/home/artem/files/file2.json'))
