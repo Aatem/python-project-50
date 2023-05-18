@@ -4,7 +4,7 @@ install:
 gendiff:
 	poetry run gendiff
 
-build:
+build: check
 	poetry build
 
 publish:
@@ -21,3 +21,12 @@ package-reinstall:
 
 test:
 	poetry run pytest
+
+check: selfcheck test lint
+
+selfcheck:
+	poetry check
+
+test-coverage:
+	poetry run pytest --cov=gendiff --cov-report xml
+
