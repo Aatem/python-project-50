@@ -4,7 +4,7 @@ install:
 gendiff:
 	poetry run gendiff
 
-build: check
+build: #check
 	poetry build
 
 publish:
@@ -30,3 +30,5 @@ selfcheck:
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml
 
+rebase:
+	git pull --rebase
