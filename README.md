@@ -18,3 +18,6 @@
 
 Плоский фомат:
 <a href="https://asciinema.org/a/tZDV5I4nQQH9epeDSRC3Ccxca" target="_blank"><img src="https://asciinema.org/a/tZDV5I4nQQH9epeDSRC3Ccxca.svg" /></a>
+
+Вывод в JSON:
+<a href="https://asciinema.org/a/8Xodhk6lb6JfgDT4ox6Ycw03J" target="_blank"><img src="https://asciinema.org/a/8Xodhk6lb6JfgDT4ox6Ycw03J.svg" /></a>

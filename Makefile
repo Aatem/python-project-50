@@ -20,10 +20,13 @@ package-reinstall:
 	pip install --user --force-reinstall dist/*.whl
 
 retry:
-	poetry install
 	poetry build
 	poetry publish --dry-run
-	python3 -m pip install --user --force-reinstall dist/*.whl
+	python3 -m pip install --user dist/*.whl
+	pip install --user --force-reinstall dist/*.whl
+	poetry build
+	poetry publish --dry-run
+	python3 -m pip install --user dist/*.whl
 
 test:
 	poetry run pytest

@@ -36,12 +36,27 @@ def test_gendiff_json3():
     true_result = open('tests/fixtures/true_result_3').read()
     assert result == true_result
 
-def test_gendiff_json3():
+def test_gendiff_yml3():
     result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml', 'plain')
     true_result = open('tests/fixtures/true_result_3').read()
     assert result == true_result
 
-def test_gendiff_json3():
+def test_gendiff_yaml3():
     result = generate_diff('tests/fixtures/file11.yaml', 'tests/fixtures/file22.yaml', 'plain')
     true_result = open('tests/fixtures/true_result_3').read()
+    assert result == true_result
+
+def test_gendiff_json4():
+    result = generate_diff('tests/fixtures/file11.json', 'tests/fixtures/file22.json', 'json')
+    true_result = open('tests/fixtures/true_result.json').read()
+    assert result == true_result
+
+def test_gendiff_yml4():
+    result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml', 'json')
+    true_result = open('tests/fixtures/true_result.json').read()
+    assert result == true_result
+
+def test_gendiff_yaml4():
+    result = generate_diff('tests/fixtures/file11.yaml', 'tests/fixtures/file22.yaml', 'json')
+    true_result = open('tests/fixtures/true_result.json').read()
     assert result == true_result
