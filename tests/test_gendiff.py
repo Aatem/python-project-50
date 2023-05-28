@@ -31,3 +31,17 @@ def test_gendiff_yaml2():
     true_result = open('tests/fixtures/true_result_2').read()
     assert result == true_result
 
+def test_gendiff_json3():
+    result = generate_diff('tests/fixtures/file11.json', 'tests/fixtures/file22.json', 'plain')
+    true_result = open('tests/fixtures/true_result_3').read()
+    assert result == true_result
+
+def test_gendiff_json3():
+    result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml', 'plain')
+    true_result = open('tests/fixtures/true_result_3').read()
+    assert result == true_result
+
+def test_gendiff_json3():
+    result = generate_diff('tests/fixtures/file11.yaml', 'tests/fixtures/file22.yaml', 'plain')
+    true_result = open('tests/fixtures/true_result_3').read()
+    assert result == true_result

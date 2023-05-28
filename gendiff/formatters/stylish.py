@@ -1,5 +1,5 @@
-def style(diff, depth=1):
-    children = diff.get('children')
+def formatter_stylish(diff, depth=1):
+    children = diff.get('value')
     type = diff['type']
     key = diff.get('key')
     index = '    ' * depth
@@ -8,12 +8,12 @@ def style(diff, depth=1):
     value1 = value_processing(diff.get('value1'), depth)
     value2 = value_processing(diff.get('value2'), depth)
     if type == 'root':
-        new_children = map((lambda child: style(child, depth)), children)
-        result = ''.join(new_children)
+        line = map((lambda child: formatter_stylish(child, depth)), children)
+        result = ''.join(line)
         return f'{{\n{result}}}'
     elif type == 'parent':
-        new_children = map((lambda child: style(child, depth + 1)), value)
-        result = ''.join(new_children)
+        line = map((lambda child: formatter_stylish(child, depth + 1)), value)
+        result = ''.join(line)
         return f'{index}{key}: {{\n{result}{index}}}\n'
     elif type == 'added':
         return f'{index_min}  + {key}: {value}\n'

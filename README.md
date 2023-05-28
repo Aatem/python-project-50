@@ -15,3 +15,6 @@
 
 Рекурсивное сравнение:
 <a href="https://asciinema.org/a/JtH8GaWKSzFiDtWmIyxCxiNeZ" target="_blank"><img src="https://asciinema.org/a/JtH8GaWKSzFiDtWmIyxCxiNeZ.svg" /></a>
+
+Плоский фомат:
+<a href="https://asciinema.org/a/tZDV5I4nQQH9epeDSRC3Ccxca" target="_blank"><img src="https://asciinema.org/a/tZDV5I4nQQH9epeDSRC3Ccxca.svg" /></a>

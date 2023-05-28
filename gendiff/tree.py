@@ -1,5 +1,5 @@
 def make_tree(data1, data2):
-    return {'type': 'root', 'children': temp_tree(data1, data2)}
+    return {'type': 'root', 'value': temp_tree(data1, data2)}
 
 
 def temp_tree(data1, data2):
