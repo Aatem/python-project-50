@@ -13,8 +13,6 @@ parser.add_argument("-f", "--format", default='stylish',
 
 args = parser.parse_args()
 
-print(args)
-
 
 def main():
     diff = generate_diff(args.first_file, args.second_file, args.format)
