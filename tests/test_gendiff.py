@@ -1,14 +1,14 @@
 import pytest
 from gendiff.generator_diff import generate_diff
 
-file1 = '/home/artem/python-project-50/tests/fixtures/file1.'
-file2 = '/home/artem/python-project-50/tests/fixtures/file2.'
-file11 = '/home/artem/python-project-50/tests/fixtures/file11.'
-file22 = '/home/artem/python-project-50/tests/fixtures/file22.'
-true_result = open('/home/artem/python-project-50/tests/fixtures/true_result').read()
-true_result_2 = open('/home/artem/python-project-50/tests/fixtures/true_result_2').read()
-true_result_3 = open('/home/artem/python-project-50/tests/fixtures/true_result_3').read()
-true_result_json = open('/home/artem/python-project-50/tests/fixtures/true_result.json').read()
+file1 = 'tests/fixtures/file1.'
+file2 = 'tests/fixtures/file2.'
+file11 = 'tests/fixtures/file11.'
+file22 = 'tests/fixtures/file22.'
+true_result = open('tests/fixtures/true_result').read()
+true_result_2 = open('tests/fixtures/true_result_2').read()
+true_result_3 = open('tests/fixtures/true_result_3').read()
+true_result_json = open('tests/fixtures/true_result.json').read()
 
 @pytest.mark.parametrize('input1,input2,formatter,output', [(file1 + 'json', file2 + 'json', 'stylish',  true_result), 
                                                             (file1 + 'yaml', file2 + 'yaml', 'stylish', true_result),
