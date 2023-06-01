@@ -11,7 +11,7 @@ true_result_2 = open('tests/fixtures/true_result_2').read()
 true_result_3 = open('tests/fixtures/true_result_3').read()
 true_result_json = open('tests/fixtures/true_result.json').read()
 files_to_pytest = [
-    (file1 + 'json', file2 + 'json', 'stylish',  true_result),
+    (file1 + 'json', file2 + 'json', 'stylish', true_result),
     (file1 + 'yaml', file2 + 'yaml', 'stylish', true_result),
     (file1 + 'yml', file2 + 'yml', 'stylish', true_result),
     (file11 + 'json', file22 + 'json', 'stylish', true_result_2),
