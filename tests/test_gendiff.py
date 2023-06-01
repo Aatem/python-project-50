@@ -1,62 +1,26 @@
+import pytest
 from gendiff.generator_diff import generate_diff
 
+file1 = '/home/artem/python-project-50/tests/fixtures/file1.'
+file2 = '/home/artem/python-project-50/tests/fixtures/file2.'
+file11 = '/home/artem/python-project-50/tests/fixtures/file11.'
+file22 = '/home/artem/python-project-50/tests/fixtures/file22.'
+true_result = open('/home/artem/python-project-50/tests/fixtures/true_result').read()
+true_result_2 = open('/home/artem/python-project-50/tests/fixtures/true_result_2').read()
+true_result_3 = open('/home/artem/python-project-50/tests/fixtures/true_result_3').read()
+true_result_json = open('/home/artem/python-project-50/tests/fixtures/true_result.json').read()
 
-def test_gendiff_json():
-    result = generate_diff('tests/fixtures/file1.json', 'tests/fixtures/file2.json')
-    true_result = open('tests/fixtures/true_result').read()
-    assert result == true_result
-
-def test_gendiff_yaml():
-    result_yaml = generate_diff('tests/fixtures/file1.yaml', 'tests/fixtures/file2.yaml')
-    true_result = open('tests/fixtures/true_result').read()
-    assert result_yaml == true_result
-
-def test_gendiff_yml():
-    result_yaml = generate_diff('tests/fixtures/file1.yml', 'tests/fixtures/file2.yml')
-    true_result = open('tests/fixtures/true_result').read()
-    assert result_yaml == true_result
-
-def test_gendiff_json2():
-    result = generate_diff('tests/fixtures/file11.json', 'tests/fixtures/file22.json')
-    true_result = open('tests/fixtures/true_result_2').read()
-    assert result == true_result
-
-def test_gendiff_yml2():
-    result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml')
-    true_result = open('tests/fixtures/true_result_2').read()
-    assert result == true_result
-
-def test_gendiff_yaml2():
-    result = generate_diff('tests/fixtures/file11.yaml', 'tests/fixtures/file22.yaml')
-    true_result = open('tests/fixtures/true_result_2').read()
-    assert result == true_result
-
-def test_gendiff_json3():
-    result = generate_diff('tests/fixtures/file11.json', 'tests/fixtures/file22.json', 'plain')
-    true_result = open('tests/fixtures/true_result_3').read()
-    assert result == true_result
-
-def test_gendiff_yml3():
-    result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml', 'plain')
-    true_result = open('tests/fixtures/true_result_3').read()
-    assert result == true_result
-
-def test_gendiff_yaml3():
-    result = generate_diff('tests/fixtures/file11.yaml', 'tests/fixtures/file22.yaml', 'plain')
-    true_result = open('tests/fixtures/true_result_3').read()
-    assert result == true_result
-
-def test_gendiff_json4():
-    result = generate_diff('tests/fixtures/file11.json', 'tests/fixtures/file22.json', 'json')
-    true_result = open('tests/fixtures/true_result.json').read()
-    assert result == true_result
-
-def test_gendiff_yml4():
-    result = generate_diff('tests/fixtures/file11.yml', 'tests/fixtures/file22.yml', 'json')
-    true_result = open('tests/fixtures/true_result.json').read()
-    assert result == true_result
-
-def test_gendiff_yaml4():
-    result = generate_diff('tests/fixtures/file11.yaml', 'tests/fixtures/file22.yaml', 'json')
-    true_result = open('tests/fixtures/true_result.json').read()
-    assert result == true_result
+@pytest.mark.parametrize('input1,input2,formatter,output', [(file1 + 'json', file2 + 'json', 'stylish',  true_result), 
+                                                            (file1 + 'yaml', file2 + 'yaml', 'stylish', true_result),
+                                                            (file1 + 'yml', file2 + 'yml', 'stylish', true_result),
+                                                            (file11 + 'json', file22 + 'json', 'stylish', true_result_2), 
+                                                            (file11 + 'yaml', file22 + 'yaml', 'stylish', true_result_2),
+                                                            (file11 + 'yml', file22 + 'yml', 'stylish', true_result_2),
+                                                            (file11 + 'json', file22 + 'json', 'plain', true_result_3), 
+                                                            (file11 + 'yaml', file22 + 'yaml', 'plain', true_result_3),
+                                                            (file11 + 'yml', file22 + 'yml', 'plain', true_result_3),
+                                                            (file11 + 'json', file22 + 'json', 'json', true_result_json), 
+                                                            (file11 + 'yaml', file22 + 'yaml', 'json', true_result_json),
+                                                            (file11 + 'yml', file22 + 'yml', 'json', true_result_json)])
+def test_gendiff(input1, input2, formatter, output):
+    assert generate_diff(input1, input2, formatter) == output

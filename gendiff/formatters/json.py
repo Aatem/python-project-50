@@ -1,5 +1,5 @@
 import json
 
 
-def formatter_json(diff):
+def format(diff):
     return json.dumps(diff, indent=4)

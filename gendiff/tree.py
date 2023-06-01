@@ -1,8 +1,8 @@
 def make_tree(data1, data2):
-    return {'type': 'root', 'value': temp_tree(data1, data2)}
+    return {'type': 'root', 'value': build_tree(data1, data2)}
 
 
-def temp_tree(data1, data2):
+def build_tree(data1, data2):
     result = []
     keys = data1.keys() | data2.keys()
     for key in sorted(keys):
@@ -22,7 +22,7 @@ def temp_tree(data1, data2):
             result.append({
                 'key': key,
                 'type': 'parent',
-                'value': temp_tree(data1[key], data2[key])
+                'value': build_tree(data1[key], data2[key])
             })
         elif data1[key] == data2[key]:
             result.append({

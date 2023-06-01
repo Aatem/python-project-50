@@ -1,4 +1,4 @@
-def formatter_plain(diff):
+def format(diff):
     return make_plain(diff)[:-1]
 
 
@@ -10,7 +10,7 @@ def make_plain(diff, parent_path=''):
         string = ''
         type = child.get('type')
         if type == 'added':
-            value = value_processing(child.get('value'))
+            value = value_to_string(child.get('value'))
             parent = f"{path}.{child.get('key')}".strip('.')
             string = f"Property '{parent}' was added with value: {value}\n"
             result += string
@@ -21,8 +21,8 @@ def make_plain(diff, parent_path=''):
             string = f"Property '{parent}' was removed\n"
             result += string
         elif type == 'updated':
-            value1 = value_processing(child.get('value1'))
-            value2 = value_processing(child.get('value2'))
+            value1 = value_to_string(child.get('value1'))
+            value2 = value_to_string(child.get('value2'))
             parent = f"{path}.{child.get('key')}".strip('.')
             _ = f"Property '{parent}' was updated. From {value1} to {value2}\n"
             string = _
@@ -34,7 +34,7 @@ def make_plain(diff, parent_path=''):
     return result
 
 
-def value_processing(value):
+def value_to_string(value):
     if isinstance(value, dict):
         return "[complex value]"
     elif isinstance(value, bool):
