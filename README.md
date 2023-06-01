@@ -1,11 +1,11 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Aatem/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/Aatem/python-project-50/actions)
 
-<a href="https://codeclimate.com/github/Aatem/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/7736c7ad7f438ef35207/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/7736c7ad7f438ef35207/maintainability)](https://codeclimate.com/github/Aatem/python-project-50/maintainability)
 
 [![Python CI](https://github.com/Aatem/python-project-50/actions/workflows/Python%20CI.yml/badge.svg)](https://github.com/Aatem/python-project-50/actions/workflows/Python%20CI.yml)
 
-<a href="https://codeclimate.com/github/Aatem/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/7736c7ad7f438ef35207/test_coverage" /></a>
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7736c7ad7f438ef35207/test_coverage)](https://codeclimate.com/github/Aatem/python-project-50/test_coverage)
 
 Сравнение плоских файлов (JSON):
 <a href="https://asciinema.org/a/FJnMl19o4X4YOITxNmu56SZsS" target="_blank"><img src="https://asciinema.org/a/FJnMl19o4X4YOITxNmu56SZsS.svg" /></a>
