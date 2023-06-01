@@ -7,6 +7,17 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7736c7ad7f438ef35207/test_coverage)](https://codeclimate.com/github/Aatem/python-project-50/test_coverage)
 
+Вычислитель отличий - это программа, которая определяет разницу между двумя структурами данных.
+Программа поддерживает форматы: yaml и json.
+Формирование отчета в виде текста, в плоском формате, а так же в формате json.
+
+Установка программы:
+git clone https://github.com/agentkei/python-project-50
+make install
+
+Вызов справки:
+gendiff -h
+
 Сравнение плоских файлов (JSON):
 <a href="https://asciinema.org/a/FJnMl19o4X4YOITxNmu56SZsS" target="_blank"><img src="https://asciinema.org/a/FJnMl19o4X4YOITxNmu56SZsS.svg" /></a>
 
