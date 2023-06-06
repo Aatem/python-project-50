@@ -6,17 +6,17 @@ import os
 
 def get_data(file_path):
     _, ext = os.path.splitext(file_path)
-    file = open(file_path)
-    if ext == '.json':
-        return parse(file, 'json')
-    elif ext == '.yaml' or ext == '.yml':
-        return parse(file, 'yaml')
-    else:
-        return 'Неизвестный формат'
+    with open(file_path) as file:
+        if ext == '.json':
+            return parse(file, 'json')
+        elif ext == '.yaml' or ext == '.yml':
+            return parse(file, 'yaml')
+        else:
+            return 'Unknown format'
 
 
-def parse(file, file_format):
-    if file_format == 'json':
-        return json.load(file)
-    elif file_format == 'yaml':
-        return yaml.load(file, Loader=SafeLoader)
+def parse(object, format):
+    if format == 'json':
+        return json.load(object)
+    elif format == 'yaml':
+        return yaml.load(object, Loader=SafeLoader)

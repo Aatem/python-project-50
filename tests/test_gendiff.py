@@ -6,10 +6,10 @@ file1 = 'tests/fixtures/file1.'
 file2 = 'tests/fixtures/file2.'
 file11 = 'tests/fixtures/file11.'
 file22 = 'tests/fixtures/file22.'
-true_result = open('tests/fixtures/true_result').read()
-true_result_2 = open('tests/fixtures/true_result_2').read()
-true_result_3 = open('tests/fixtures/true_result_3').read()
-true_result_json = open('tests/fixtures/true_result.json').read()
+true_result = 'tests/fixtures/true_result'
+true_result_2 = 'tests/fixtures/true_result_2'
+true_result_3 = 'tests/fixtures/true_result_3'
+true_result_json = 'tests/fixtures/true_result.json'
 files_to_pytest = [
     (file1 + 'json', file2 + 'json', 'stylish', true_result),
     (file1 + 'yaml', file2 + 'yaml', 'stylish', true_result),
@@ -27,4 +27,4 @@ files_to_pytest = [
 
 @pytest.mark.parametrize('input1,input2,formatter,output', files_to_pytest)
 def test_gendiff(input1, input2, formatter, output):
-    assert generate_diff(input1, input2, formatter) == output
+    assert generate_diff(input1, input2, formatter) == open(output).read()

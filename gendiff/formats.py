@@ -11,4 +11,4 @@ def format(dictionary, formatter):
     elif formatter == 'json':
         return json(dictionary)
     else:
-        return 'Неизвестный форматтер!'
+        return 'Unknown formatter'
